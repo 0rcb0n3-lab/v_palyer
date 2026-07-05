@@ -20,6 +20,11 @@
     .controls {
       background-color: black;
       flex: 0 0 auto;
+      display:flex;
+      align-items:center;
+    }
+    .controls-expand{
+      flex-grow: 1;
     }
     .control-btn {
       width: 44px;
@@ -50,7 +55,12 @@
       <button class="js-volume-button control-btn" aria-label="Mute Off" hidden>
         <i class="fa fa-volume-off" aria-hidden="true"></i>
       </button>
+      <div class="controls-expand"></div>
+      <button class="js-fullscreen-button control-btn" aria-label="Fullscreen">
+        <i class="fa fa-expand" aria-hidden="true"></i>
+      </button>
       </div>
+
       <!-- Here can be placed player controls: play and volume buttons -->
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
