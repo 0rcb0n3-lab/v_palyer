@@ -1,0 +1,94 @@
+.player {
+  width: 800px;
+  height: 600px;
+  display:flex;
+  flex-direction:column;
+  background-color:black;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+.screen {
+  flex-grow: 1;
+}
+
+.bottom-controls {
+  background-color: black;
+  display:flex;
+  align-items:center;
+  padding: 0 4px 8px;
+}
+
+.left-buttons,
+.right-buttons {
+  display:flex;
+  align-items: center;
+}
+
+.viewing-panel{
+  flex-grow: 1;
+  display:flex;
+  align-items: center;
+  margin: 0 6px;
+}
+
+.player-button {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px;
+  line-height: 1;
+}
+
+.player-button[hidden] {
+  display: none !important;
+}
+
+.js-play-button,
+.js-pause-button,
+.js-volume-button,
+.js-mute-button,
+.js-fullscreen-button {
+  margin: 0;
+}
+
+.js-volume-button,
+.js-mute-button {
+  margin-left: 9px;
+}
+
+.viewing-time {
+  color: white;
+  font-size: 16px;
+  white-space: nowrap;
+  margin-right: 15px;
+}
+
+.viewing-progressbar {
+  flex-grow: 1;
+  height: 5px;
+  background-color: #555;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+}
+
+.video-duration {
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+.viewing-panel .js-duration {
+  margin-left: 15px;
+  margin-right: 0;
+}

@@ -3,92 +3,47 @@
   <head>
     <title>Пример подключения плеера</title>
     <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./static/favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <style>
-    .player {
-      width: 800px;
-      height: 600px;
-      display:flex;
-      flex-direction:column;
-      background-color:black;
-    }
-    .player--shadow {
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
-    }
-    .video-container {
-      flex-grow :1;
-    }
-    .controls {
-      background-color: black;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-sizing:border-box;
-      padding-bottom: 8px;
-    }
-    .controls-expand{
-      flex-grow: 1;
-    }
-    .control-btn {
-      width: 28px;
-      height: 28px;
-      display: flex;
-      align-items: center;
-
-      border: none;
-      cursor: pointer;
-      color: white;
-      background-color: transparent;
-      font-size: 18px;
-      padding: 10px;
-      line-height:1;
-    }
-
-    .js-play-button,
-    .js-pause-button,
-    .js-volume-button,
-    .js-mute-button {
-    justify-content: flex-start;
-    padding-left: 10px;
-    }
-    .js-volume-button,
-    .js-mute-button {
-    margin-left: 8px;
-
-    }
-    .js-fullscreen-button {
-    justify-content: flex-end;
-    padding-right: 10px;
-    }
-    .control-btn[hidden] {
-    display: none !important;
-    }
-    </style>
+    <link rel="stylesheet" href="player.css">
   </head>
   <body>
-    <div id="player" class="player player--shadow">
-      <div class="js-video-container video-container"></div>
-      <div class="controls">
-        <button class="js-play-button control-btn" aria-label="Play">
-          <i class="fa fa-play" aria-hidden="true"></i>
-        </button>
-        <button class="js-pause-button control-btn" hidden aria-label="Pause">
-          <i class="fa fa-pause" aria-hidden="true"></i>
-        </button>
-        <button class="js-mute-button control-btn" aria-label="Mute On">
-          <i class="fa fa-volume-up" aria-hidden="true"></i>
-        </button>
-        <button class="js-volume-button control-btn" aria-label="Mute Off" hidden>
-          <i class="fa fa-volume-off" aria-hidden="true"></i>
-        </button>
-        <div class="controls-expand"></div>
-        <button class="js-fullscreen-button control-btn" aria-label="Fullscreen">
-          <i class="fa fa-expand" aria-hidden="true"></i>
-        </button>
+    <div id="player" class="player">
+      <div class="js-video-container screen"></div>
+      <div class="bottom-controls">
+        <div class="left-buttons">
+          <button class="js-play-button player-button" aria-label="Play">
+            <i class="fa fa-play" aria-hidden="true"></i>
+          </button>
+          <button class="js-pause-button player-button" hidden aria-label="Pause">
+            <i class="fa fa-pause" aria-hidden="true"></i>
+          </button>
+          <button class="js-mute-button player-button" aria-label="Mute On">
+            <i class="fa fa-volume-up" aria-hidden="true"></i>
+          </button>
+          <button class="js-volume-button player-button" hidden aria-label="Mute Off">
+            <i class="fa fa-volume-off" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="viewing-panel">
+          <div class="js-current-time viewing-time"></div>
+          <div class="js-progress-bar viewing-progressbar">
+            <div class="js-progress-slider video-duration"></div>
+          </div>
+          <div class="js-duration viewing-time"></div>
+        </div>
+        <div class="right-buttons">
+          <button class="js-fullscreen-button player-button" aria-label="Fullscreen">
+            <i class="fa fa-expand" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
-      <!-- Here can be placed player controls: play and volume buttons -->
     </div>
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
     <script src="player.js"></script>
